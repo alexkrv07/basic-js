@@ -1,7 +1,7 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function transform(arr) {
-  try {
+
     if (!Array.isArray(arr)) {
       throw new Error ("Argument is not array")
     }
@@ -43,9 +43,4 @@ module.exports = function transform(arr) {
       }
     }
     return result;
-
-
-  } catch (error) {
-    return error;    
-  }
 };
