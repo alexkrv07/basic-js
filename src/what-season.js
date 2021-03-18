@@ -4,10 +4,8 @@ module.exports = function getSeason(date) {
   if (!date)  {
     return "Unable to determine the time of year!";
   }
-  try {
-    const testdate = new Date(date);
-    if ('Invalid Date' == testdate ) {
-      throw new Error('Not implemented');
+    if (!date.valueOf() ) {
+      throw new Error('Not Not a date');
     }
       
     const seasons = {
@@ -16,7 +14,7 @@ module.exports = function getSeason(date) {
       autumn: "autumn",
       winter: "winter"
     };
-    switch (testdate .getMonth()) {
+    switch (date .getMonth()) {
       case 0: 
       case 1: 
       case 11: 
@@ -33,9 +31,5 @@ module.exports = function getSeason(date) {
       case 9:
       case 10: 
         return seasons["autumn"];
-  }
-  }
-  catch(e) {
-    return "Error";
   }
 };
