@@ -3,7 +3,9 @@ const CustomError = require("../extensions/custom-error");
 module.exports = function repeater(str, options) {
   let repeatTimes = options["repeatTimes"] || 0;
   let separator = options["separator"] || "+";
-  let addition = options["addition"] || "";
+
+  let addition = ("addition" in options) ? options["addition"] + "" : "";
+  // let addition = options["addition"] || "";
   // if (options["addition"] == false) {
   //   addition =  "false";
   // }
