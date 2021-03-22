@@ -23,15 +23,6 @@ class VigenereCipheringMachine {
     str = str.toUpperCase();
     key = key.toUpperCase();
 
-    // if (direct) {
-    //   str = str.toUpperCase();
-    //   key = key.toUpperCase();
-    // }
-    // else {
-    //   str = str.toUpperCase().split("").reverse().join("");;
-    //   key = key.toUpperCase();
-    // }
-
     for (let i = 0; i < str.length; i++) {
       let strIndex = str.charCodeAt(i);
       let keyIndex = key.charCodeAt(j);
@@ -65,17 +56,8 @@ class VigenereCipheringMachine {
     let j = 0; 
     let direct = this.direct;
 
-    if (direct) {
-      str = str.toUpperCase();
-      key = key.toUpperCase();
-    }
-    else {
-      str = str.toUpperCase().split("").reverse().join("");;
-      key = key.toUpperCase();
-    }
-
-    // str = str.toUpperCase();
-    // key = key.toUpperCase();
+    str = str.toUpperCase();
+    key = key.toUpperCase();
     
     for (let i = 0; i < str.length; i++) {
       let strIndex = str.charCodeAt(i);
@@ -98,10 +80,10 @@ class VigenereCipheringMachine {
         }
       }
     }
-    // if (direct) {
+    if (direct) {
       return plainText;
-    // }
-    // return plainText.split("").reverse().join("");
+    }
+    return plainText.split("").reverse().join("");
 
   }
 }
