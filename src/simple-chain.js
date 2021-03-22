@@ -21,6 +21,7 @@ const chainMaker = {
   removeLink(position) {
 
     if (!Number.isInteger(position) || position < 0 || position > (this.chain.length - 1)) {
+      this.chain = [];
       throw new Error("Invalid position");
     }
 
@@ -46,6 +47,7 @@ const chainMaker = {
         finish += this.link;
       }
     }
+    this.chain = [];
     return finish;
   }
 };
